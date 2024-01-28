@@ -13,20 +13,6 @@ item_list=[]
 
 source_to_select="ALL"
 
-def parse_config_bak(text_content):
-    text_lines=text_content.split('\n')
-    host=""
-    for line in text_lines:
-        print(green(line,bold=True))
-        if '.eu.amp.cisco.com' in line:
-            host="https://private.intel.eu.amp.cisco.com"
-            host_for_token=""
-        elif '.intel.amp.cisco.com' in line:
-            host="https://private.intel.amp.cisco.com"
-        elif '.apjc.amp.cisco.com' in line:
-            host="https://private.intel.apjc.amp.cisco.com"            
-    print(yellow(host))
-    return host
     
 def parse_config(text_content):
     text_lines=text_content.split('\n')

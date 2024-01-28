@@ -8,7 +8,7 @@ Then you can select one of them thanks to an index.
 
 Next the script create a lot of resulting files into the **./result** subfolder. Every **.txt** files contains object_IDs of every objects that are attached to the incident.
 
-The next step is to run the **2-delete_selected_XDR_incident.py** script which reads the text files and delete one by one every objects they contain.
+The next step is to run the **2-delete_selected_XDR_incident.py** script which reads the text files and delete one by one every objects they contain thanks to the object_IDs.
 
 ## Some explanation
 
