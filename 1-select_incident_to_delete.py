@@ -101,10 +101,12 @@ def get_incidents(host,access_token,client_id,client_password,host_for_token):
         response = get(host,access_token,url,offset,limit)
         print(response)      
         if response.status_code==401:
-            get_ctr_token(host_for_token,client_id,client_password)
+            access_token=get_ctr_token(host_for_token,client_id,client_password)
             response = get(host,access_token,url,offset,limit)
         payload = json.dumps(response.json(),indent=4,sort_keys=True, separators=(',', ': '))
         #print(response.json())    
+        print()
+        print(yellow('Incidents into the XDR Tenant :',bold=True))
         items=response.json()
         for item in items: 
             #print(yellow(item,bold=True))
