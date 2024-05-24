@@ -136,7 +136,12 @@ def get_incidents(host,access_token,client_id,client_password,host_for_token):
     i=0
     print()
     a=input('Which Incident do you select ? ( enter incident index ) : ')
-    index=int(a)
+    if a:
+        index=int(a)
+    else:
+        print()
+        print(red('Error ! : You must Select an Incident !',bold=True))
+        sys.exit()
     #print()
     #print(item_list[index])
     return (item_list[index])
@@ -198,7 +203,6 @@ def get_relationships(host,access_token,target_ref):
         for item in items: 
             index+=1
             #print(yellow(item,bold=True))
-            print("Sighting ID :",yellow(item['source_ref'],bold=True))
             item_list.append(item)
             #fb.write(json.dumps(item))
             #fb.write(',\n')
